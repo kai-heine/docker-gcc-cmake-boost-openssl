@@ -1,10 +1,10 @@
-FROM fedora:latest
+FROM debian:buster-slim
 
-RUN dnf install -q -y git perl gcc gcc-c++ ninja-build cmake boost-devel
-RUN cd /tmp \
- && curl https://www.openssl.org/source/openssl-1.1.1.tar.gz | tar -xz \
- && cd openssl-1.1.1 \
- && ./config no-tests \
- && make install \
- && cd / && rm -rf /tmp/openssl*
+RUN apt update && apt install -y --no-install-recommends \
+	libboost-all-dev \
+	libssl-dev \
+	cmake \
+	ninja-build \
+	g++
 
+WORKDIR /home
