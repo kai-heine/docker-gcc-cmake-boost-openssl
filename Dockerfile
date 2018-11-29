@@ -6,6 +6,7 @@ RUN apt update && apt install -y --no-install-recommends \
 	cmake \
 	ninja-build \
 	g++ \
-	git
+	git \
+	ca-certificates
 
 WORKDIR /home
