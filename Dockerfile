@@ -5,6 +5,7 @@ RUN apt update && apt install -y --no-install-recommends \
 	libssl-dev \
 	cmake \
 	ninja-build \
-	g++
+	g++ \
+	git
 
 WORKDIR /home
